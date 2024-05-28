@@ -1,4 +1,4 @@
-import { Separator } from '@radix-ui/react-separator'
+import { Separator } from '@/components/ui/separator'
 import { Home, Pyramid, ShoppingCart } from 'lucide-react'
 import { NavLink } from './nav-link'
 import { ModeToggle } from './theme/mode-toggle'
@@ -9,7 +9,7 @@ export function Header() {
     <div className="border-b">
       <div className=" flex h-16 items-center gap-6 px-6">
         <Pyramid className="w-4 h-4" />
-        <Separator orientation="vertical" className="h-6 w-0.5 bg-muted" />
+        <Separator orientation="vertical" className="h-6 w-0.5 " />
 
         <nav className="flex items-center space-x-4 lg:space-x-6">
           <NavLink to="/">

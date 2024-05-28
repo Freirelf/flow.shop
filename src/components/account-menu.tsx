@@ -7,7 +7,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu'
-import { DropdownMenuSeparator } from '@radix-ui/react-dropdown-menu'
+import { DropdownMenuSeparator } from '@/components/ui/dropdown-menu'
 
 export function AccountMenu() {
   return (
@@ -28,7 +28,7 @@ export function AccountMenu() {
             lucasfreirel.dev@gmail.com
           </span>
         </DropdownMenuLabel>
-        <DropdownMenuSeparator className="bg-muted w-full h-0.5" />
+        <DropdownMenuSeparator />
         <DropdownMenuItem>
           <Building className="mr-2 h-4 w-4" />
           <span> Perfil da loja </span>
