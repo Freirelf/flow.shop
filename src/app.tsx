@@ -4,6 +4,8 @@ import { Helmet, HelmetProvider } from 'react-helmet-async'
 import './globals.css'
 import { Toaster } from 'sonner'
 import { ThemeProvider } from './components/theme/theme-provider'
+import { QueryClientProvider } from '@tanstack/react-query'
+import { queryClient } from './lib/react-query'
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       <ThemeProvider storageKey="theme flow.shop" defaultTheme="dark">
         <Helmet titleTemplate="%s | Flow.shop" />
         <Toaster richColors />
-        <RouterProvider router={router} />
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
       </ThemeProvider>
     </HelmetProvider>
   )
