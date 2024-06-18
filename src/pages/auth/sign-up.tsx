@@ -27,13 +27,13 @@ function SignUp() {
     formState: { isSubmitting },
   } = useForm<SignUpForm>()
 
-  const { mutateAsync: authenticate } = useMutation({
+  const { mutateAsync: registerStoreName } = useMutation({
     mutationFn: registerStore,
   })
 
   async function handleSignUpForm(data: SignUpForm) {
     try {
-      await authenticate({
+      await registerStoreName({
         nameStore: data.nameStore,
         managerName: data.managerName,
         email: data.email,

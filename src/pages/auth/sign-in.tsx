@@ -35,7 +35,7 @@ function SignIn() {
   async function handleSignInForm(data: SignInForm) {
     await authenticate({ email: data.email })
 
-    toast.success('Realizado com sucesso.', {
+    toast.success('Enviamos um link de autenticação para seu e-mail.', {
       action: {
         label: 'Reenviar',
         onClick: () => handleSignInForm(data),
