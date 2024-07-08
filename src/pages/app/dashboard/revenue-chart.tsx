@@ -10,6 +10,7 @@ import { DatePickerRange } from '@/components/ui/date-range-picker'
 import { Label } from '@/components/ui/label'
 import { useQuery } from '@tanstack/react-query'
 import { subDays } from 'date-fns'
+import { Loader2 } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { DateRange } from 'react-day-picker'
 
@@ -63,7 +64,7 @@ function RevenueChart() {
         </div>
       </CardHeader>
       <CardContent>
-        {chartDate && (
+        {chartDate ? (
           <ResponsiveContainer width="100%" height={240}>
             <LineChart data={chartDate} style={{ fontSize: 12 }}>
               <XAxis dataKey="date" tickLine={false} axisLine={false} dy={16} />
@@ -91,6 +92,10 @@ function RevenueChart() {
               />
             </LineChart>
           </ResponsiveContainer>
+        ) : (
+          <div className="flex h-[240px] items-center justify-center w-full">
+            <Loader2 className="w-8 h-8 text-muted-foreground animate-ping" />
+          </div>
         )}
       </CardContent>
     </Card>
